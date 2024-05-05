@@ -6,13 +6,15 @@ const upload = multer();
 
 const productRoute = require('./routes/api/productRoute');
 
-// Connecting to the Database
-let mongodb_url = 'mongodb://localhost/';
-let dbName = 'yolomy';
+const MONGODB_URI = process.env.MONGODB_URI;
 
-// define a url to connect to the database
-const MONGODB_URI = process.env.MONGODB_URI || mongodb_url + dbName
-mongoose.connect(MONGODB_URI,{useNewUrlParser: true, useUnifiedTopology: true  } )
+const dbName = process.env.DB_NAME || 'yolomy';
+
+const mongodbUrl = `mongodb://localhost/${dbName}`;
+
+const url = MONGODB_URI || mongodbUrl;
+
+mongoose.connect(url,{useNewUrlParser: true, useUnifiedTopology: true  } )
 let db = mongoose.connection;
 
 // Check Connection
@@ -31,10 +33,10 @@ const app = express()
 // Body parser middleware
 app.use(express.json())
 
-// 
-app.use(upload.array()); 
+//
+app.use(upload.array());
 
-// Cors 
+// Cors
 app.use(cors());
 
 // Use Route
