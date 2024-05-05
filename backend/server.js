@@ -11,7 +11,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 
 const dbName = process.env.DB_NAME || 'yolomy';
 
-const mongodbUrl = `mongodb://localhost/${dbName}`;
+const mongodbUrl = `'mongodb://mongo:27017/${dbName}`;
 
 const url = MONGODB_URI || mongodbUrl;
 
