@@ -1,23 +1,47 @@
-# Requirements
-Make sure that you have the following installed:
-- [node](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04) 
-- npm 
-- [MongoDB](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/) and start the mongodb service with `sudo service mongod start`
+# YOLO
 
-## Navigate to the Client Folder 
- `cd client`
+- Yolo is a MERN (MongoDB, Express, React, Node.js) stack application. For Moringa DevOps IP2
 
-## Run the folllowing command to install the dependencies 
- `npm install`
+# Prerequisites
 
-## Run the folllowing to start the app
- `npm start`
+Before running the application with Docker Compose, ensure that you have the following prerequisites installed on your system:
+1. The latest version of Docker Desktop.
 
-## Open a new terminal and run the same commands in the backend folder
- `cd ../backend`
+# Setup
 
- `npm install`
+- To run the application using Docker Compose, follow these steps:
 
- `npm start`
+# Clone the repository:
 
- ### Go ahead a nd add a product (note that the price field only takes a numeric input)
+```bash
+git clone git@github.com:mzazakeith/yolo.git
+```
+
+# Navigate to the project directory:
+```bash
+cd yolo
+```
+
+# Run Docker Compose:
+
+```bash
+docker-compose up
+```
+
+- This will build and start the application containers.
+
+# Images on Docker Hub
+
+- The application images are available on Docker Hub:
+    - Frontend Image: [mzazakeith/yolo-app-client:1.0.0](https://hub.docker.com/repository/docker/mzazakeith/yolo-app-client/general)
+    - Backend Image: [mzazakeith/yolo-app-backend:1.0.0](https://hub.docker.com/repository/docker/mzazakeith/yolo-app-backend/general)
+
+>Note:These images are versioned and tagged accordingly.
+
+# Usage
+- Once the Docker containers are up and running, you can access the application at:
+    - Frontend: http://localhost:3000
+    - Backend: http://localhost:5000
+
+# License
+This project is licensed under the [MIT License.](https://github.com/mzazakeith/yolo/blob/master/LICENSE.md)
