@@ -21,7 +21,7 @@ services:
       - "5000:5000"
     env_file: ./.env
     environment:
-      - MONGODB_URI=mongodb://localhost/yolomy
+      - MONGODB_URI=mongodb://admin:password@mongo:27017/yolomy?retryWrites=true&writeConcern=majority&authSource=admin
       - DB_NAME=yolomy
     networks:
       - mern
