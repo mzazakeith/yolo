@@ -1,9 +1,7 @@
 version: '3.8'
 services:
   react-app:
-    build:
-      context: ./client
-      dockerfile: Dockerfile
+    image: mzazakeith/yolo-app-client:1.0.0
     container_name: frontend
     stdin_open: true
     ports:
