@@ -1,1 +1,3 @@
-repo: "https://github.com/mzazakeith/hyolo"
+repo: "https://github.com/mzazakeith/yolo"
+yolo_version: "master"
+dest: "/home/mzazakeith/yolo"
