@@ -9,3 +9,35 @@
     - name: Update apt cache
       apt:
         update_cache: yes
+      tags: always
+
+
+  tasks:
+    - name: Git installation and Repository Clone
+      block:
+        - name: Install Git
+          include_role:
+            name: git_install
+          tags: git
+
+        - name: Clone Git repository
+          git:
+            repo: "{{ repo }}"
+            version: "{{ yolo_version }}"
+            dest: "{{ dest }}"
+          tags: git
+
+    - name: Docker installation and setup
+      block:
+        - name: Install docker and docker-compose
+          include_role:
+            name: docker_install
+          tags: docker
+
+    - name: Run
+      block:
+        - name: Run using docker-compose
+          include_role:
+            name: docker_run
+          tags: docker
+
