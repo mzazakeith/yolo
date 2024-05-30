@@ -1,2 +1,7 @@
 ---
 # tasks file for docker_run
+- name: Start Using Docker Compose
+  docker_compose:
+    file: docker-compose.yml
+    state: present
+    restarted: yes
