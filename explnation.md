@@ -5,3 +5,4 @@ To run the project using docker compose follow the instructions detailed in the 
 
 ## Ansible Playbooks
 To run the containerized app through playbooks
+
