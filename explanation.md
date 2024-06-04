@@ -93,5 +93,5 @@ kubectl get pods
 ```
 8. Use the following [link](https://34.71.139.167:3000/) to access our deployed application
 ```
-https://34.71.139.167:3000/
+[https://34.71.139.167:3000/](http://34.170.6.187:3000/)
 ```
