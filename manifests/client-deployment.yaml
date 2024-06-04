@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: yolo-client
-          image: mzazakeith/yolo-app-client:1.0.0
+          image: mzazakeith/yolo-app-client:v1.0.2
           ports:
             - containerPort: 3002
           env:
