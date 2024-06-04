@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+  labels:
+    app: yolo-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yolo-client
+  template:
+    metadata:
+      labels:
+        app: yolo-client
+    spec:
+      containers:
+        - name: yolo-client
+          image: mzazakeith/yolo-app-client:1.0.0
+          ports:
+            - containerPort: 3002
+          env:
+            - name: yolo-backend
+              value: http://yolo-backend:5000/
