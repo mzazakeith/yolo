@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: client-container
-          image: mzazakeith/yolo-app-client:v1.0.2
+          image: mzazakeith/yolo-app-client:v1.0.4
           ports:
             - containerPort: 3000
           tty: true
