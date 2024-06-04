@@ -3,9 +3,11 @@ kind: Service
 metadata:
   name: yolo-db
 spec:
+  type: ClusterIP
   selector:
     app: yolo-db
   ports:
     - protocol: TCP
       port: 27017
       targetPort: 27017
+      name: mongodb-port
