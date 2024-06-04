@@ -23,7 +23,7 @@ import EditProductForm from './EditProductForm';
 //         id: "1"
 //     },
 //     {
-//         name: 'BackPack', 
+//         name: 'BackPack',
 //         price: '1500',
 //         quantity: 20,
 //         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at arcu rutrum dolor pellentesque interdum ac id nunc. Ut nunc nunc, mollis vel auctor at, convallis et dolor. Donec felis nisl, ultricies ac lorem mollis, tempus maximus dolor. Maecenas mollis felis nec vulputate faucibus. Curabitur eleifend, felis sit amet fermentum sodales, dolor tellus feugiat turpis, vel placerat justo est luctus dui. Etiam vitae vulputate neque. Etiam tristique interdum laoreet. Pellentesque tincidunt nisi eu eros porta efficitur. Pellentesque sit amet lacus ut libero aliquet pellentesque quis a urna. Duis rutrum odio id sapien aliquet, auctor mattis augue facilisis.',
@@ -31,7 +31,7 @@ import EditProductForm from './EditProductForm';
 //         id: "2"
 //     },
 //     {
-//         name: 'Pants', 
+//         name: 'Pants',
 //         price: '1000',
 //         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at arcu rutrum dolor pellentesque interdum ac id nunc. Ut nunc nunc, mollis vel auctor at, convallis et dolor. Donec felis nisl, ultricies ac lorem mollis, tempus maximus dolor. Maecenas mollis felis nec vulputate faucibus. Curabitur eleifend, felis sit amet fermentum sodales, dolor tellus feugiat turpis, vel placerat justo est luctus dui. Etiam vitae vulputate neque. Etiam tristique interdum laoreet. Pellentesque tincidunt nisi eu eros porta efficitur. Pellentesque sit amet lacus ut libero aliquet pellentesque quis a urna. Duis rutrum odio id sapien aliquet, auctor mattis augue facilisis.',
 //         quantity: 15,
@@ -64,7 +64,7 @@ import EditProductForm from './EditProductForm';
 //     }
 // ]
 class ProductControl extends Component {
-    
+
     constructor(props)  {
         super(props);
         this.state = {
@@ -73,12 +73,12 @@ class ProductControl extends Component {
             selectedProduct: null,
             editProduct: false,
             uploadPhoto: null
-            
+
         };
     }
-    
+
     componentDidMount(){
-        axios.get('http://localhost:5000/api/products')
+        axios.get('http://34.118.237.38:5000/api/products')
             .then(res =>{
                 console.log(res)
                 this.setState({
@@ -126,7 +126,7 @@ class ProductControl extends Component {
     //         uploadPhoto: file.file
     //     })
 
-        
+
     // }
 
     // Method to handle adding a new product
@@ -144,7 +144,7 @@ class ProductControl extends Component {
         // }
         // formData.append('myFile', this.state.uploadPhoto)
 
-        // console.log(formData)   
+        // console.log(formData
         // var formData = new FormData();
         // formData.append('myImage',newProduct);
         // const config = {
@@ -152,19 +152,19 @@ class ProductControl extends Component {
         //         'content-type': 'multipart/form-data'
         //     }
         // };
-        // console.log(formData) 
+        // console.log(formData)
         // for (var pair of formData.entries()) {
-        //     console.log(pair[0]+ ', ' + pair[1]); 
-        // }       
+        //     console.log(pair[0]+ ', ' + pair[1]);
+        // }
         // console.log(...formData)
-        axios.post('http://localhost:5000/api/products', newProduct)
+        axios.post('http://34.118.237.38:5000/api/products', newProduct)
             .then(res => console.log(res.data))
         this.setState({
             formVisibleOnPage: false
         })
     };
     handleDeletingProduct = (id) =>{
-        axios.delete('http://localhost:5000/api/products/'+id)
+        axios.delete('http://34.118.237.38:5000/api/products/'+id)
             .then(res => console.log(res.data))
             .catch((error) =>{
                 console.log(error)
@@ -175,7 +175,7 @@ class ProductControl extends Component {
                 selectedProduct: null
             })
     }
-    
+
     // Method to handle click event on a product
     handleChangingSelectedProduct = (id) => {
         console.log(id)
@@ -184,9 +184,9 @@ class ProductControl extends Component {
     }
     handleEditingProduct = (editedProduct) =>{
 
-        axios.put('http://localhost:5000/api/products/' + this.state.selectedProduct._id, editedProduct)
+        axios.put('http://34.118.237.38:5000/api/products/' + this.state.selectedProduct._id, editedProduct)
             .then(res =>console.log(res.data))
-        
+
         this.setState({
             editProduct: false,
             formVisibleOnPage: false
@@ -214,11 +214,11 @@ class ProductControl extends Component {
         }
         return (
             <React.Fragment>
-                <AddProduct 
+                <AddProduct
                 buttonText = {buttonText}
                 whenButtonClicked = {this.handleClick}
                 />
-                
+
                 {currentlyVisibleState}
             </React.Fragment>
         )
