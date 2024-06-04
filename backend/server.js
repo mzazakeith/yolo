@@ -7,15 +7,9 @@ const upload = multer();
 
 const productRoute = require('./routes/api/productRoute');
 
-const MONGODB_URI = process.env.MONGODB_URI;
-
-const dbName = process.env.DB_NAME || 'yolomy';
-
-const mongodbUrl = `'mongodb://mongo:27017/${dbName}`;
-
-const url = MONGODB_URI || mongodbUrl;
-
-mongoose.connect(url,{useNewUrlParser: true, useUnifiedTopology: true  } )
+let mongodb_url = 'mongodb://mongodb:27017';
+const MONGODB_URI = process.env.MONGODB_URI || mongodb_url ;
+mongoose.connect(MONGODB_URI,{useNewUrlParser: true, useUnifiedTopology: true  } )
 let db = mongoose.connection;
 
 // Check Connection
