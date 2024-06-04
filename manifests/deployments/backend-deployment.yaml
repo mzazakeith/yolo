@@ -15,25 +15,10 @@ spec:
         app: yolo-backend
     spec:
       containers:
-        - name: yolo-backend
+        - name: backend-container
           image: mzazakeith/yolo-app-backend:v1.0.2
           ports:
             - containerPort: 5000
           env:
-            - name: USER_NAME
-              valueFrom:
-                secretKeyRef:
-                  name: mongo-secret
-                  key: mongo-user
-            - name: USER_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mongo-secret
-                  key: mongo-password
-            - name: DB_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: mongo-config
-                  key: mongo-url
-
-
+            - name: MONGODB_URI
+              value: mongodb://yolo-db:27017
