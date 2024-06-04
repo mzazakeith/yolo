@@ -96,4 +96,6 @@ kubectl get pods
 http://34.27.90.127:3000/
 ```
 
-![](./running.png)
+![Image showing pods running](./running.png)
+
+![Image showing client result](./result.png)
