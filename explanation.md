@@ -95,3 +95,5 @@ kubectl get pods
 ```
 https://34.71.139.167:3000/
 ```
+
+![](/Users/mzaza/Documents/Practice Projects/yolo/running.png)
