@@ -15,12 +15,9 @@ spec:
         app: yolo-client
     spec:
       containers:
-        - name: yolo-client
+        - name: client-container
           image: mzazakeith/yolo-app-client:v1.0.2
           ports:
             - containerPort: 3000
           tty: true
           stdin: true
-          env:
-            - name: yolo-backend
-              value: http://yolo-backend:5000/
