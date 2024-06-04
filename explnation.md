@@ -42,3 +42,56 @@ To run the containerized app through playbooks follow the following steps
    This is made possible by the forwarded ports added in Vagrantfile
 
 ---
+
+# IP 4 
+
+## Orchestration with Kubernetes
+
+1. We begin by creating our `manifests` directory
+2. We create the needed manifest files placing them in their specific directories 
+
+> `config-maps` <br>
+> `deployments` <br>
+> `persistent-volumes` <br>
+> `services` <br>
+> `stateful-sets` <br>
+
+- We populate the files as needed. You can use mine for guidance [manifests](https://github.com/mzazakeith/yolo/tree/master/manifests).
+
+3. We then clone our repo in the Google cloud shell
+
+```bash
+git clone https://github.com/mzazakeith/yolo
+```
+
+4. Now ensure that you have enabled billing and the container api so that you can create clusters.
+
+5. Create a new cluster with the following command
+
+```bash
+   gcloud container clusters create-auto yolo --region us-central1
+```
+6. Apply your manifest files. Remember to `cd` into the correct directories or reference the directories correctly in your commands 
+```bash
+kubectl apply -f mongo-config.yaml
+kubectl apply -f backend-config.yaml
+
+kubectl apply -f pvc.yaml
+kubectl apply -f mongo-stateful-set.yaml
+
+kubectl apply -f backend-deployment.yaml
+kubectl apply -f client-deployment.yaml
+
+kubectl apply -f mongo-service.yaml
+kubectl apply -f backend-service.yaml
+kubectl apply -f client-service.yaml
+
+```
+7. Run the following command to check if the deployments were successful
+```bash
+kubectl get pods
+```
+8. Use the following [link](https://34.71.139.167:3000/) to access our deployed application
+```
+https://34.71.139.167:3000/
+```
