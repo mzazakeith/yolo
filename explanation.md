@@ -91,9 +91,9 @@ kubectl apply -f client-service.yaml
 ```bash
 kubectl get pods
 ```
-8. Use the following [link](https://34.71.139.167:3000/) to access our deployed application
+8. Use the following [link](http://34.27.90.127:3000/) to access our deployed application
 ```
-[https://34.71.139.167:3000/](http://34.170.6.187:3000/)
+http://34.27.90.127:3000/
 ```
 
 ![](./running.png)
