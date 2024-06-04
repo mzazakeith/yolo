@@ -1,6 +1,7 @@
 # YOLO
 
-- Yolo is a MERN (MongoDB, Express, React, Node.js) stack application. For Moringa DevOps IP2
+- Yolo is a MERN (MongoDB, Express, React, Node.js) stack application. For Moringa DevOps IP2, IP3 and IP4.
+- View also [explanation.md](https://github.com/mzazakeith/yolo/blob/master/explanation.md)
 
 # Prerequisites
 
